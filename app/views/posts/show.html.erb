@@ -1,0 +1,37 @@
+<br><br><br><br><br><br>
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>الاسم:</strong>
+  <%= @post.name %>
+</p>
+<br>
+<p>
+  <strong>الموقع:</strong>
+  <%= @post.location %>
+</p>
+<br>
+<p>
+  <strong>رقم_الهاتف:</strong>
+  <%= @post.number %>
+</p>
+<br>
+<p>
+  <strong>الحالة:</strong>
+  <%= @post.condition %>
+</p>
+<br>
+<p>
+  <%= image_tag @post.image(:medium), class:"img-rounded"%>
+</p>
+<br>
+<p>
+  <strong>الوصف:</strong>
+  <%= @post.description %>
+</p>
+<br>
+<%= link_to 'تعديل', edit_post_path(@post), class:"btn default" %>
+<%= link_to 'رجوع', posts_path , class:"btn default" %>
+</div>
+<br><br><br><br><br><br>

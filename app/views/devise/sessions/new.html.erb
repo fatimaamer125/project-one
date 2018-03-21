@@ -1,0 +1,34 @@
+<br><br><br><br><br>
+<div class="container">
+<h2 style="font-family='Droid Arabic Naskh', serif; line-height:60px;">تسجيل الدخول</h2>
+<form>
+  <div class="form-group">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <label for="exampleInputEmail1"><%= f.label :email %><br /></label> 
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"exampleInputEmail1" %>
+  </div>
+</div>
+ <div class="form-group">
+  <div class="field">
+     <label for="exampleInputPassword1"> <%= f.label :password %><br /></label>
+    <%= f.password_field :password, autocomplete: "off",class:"form-control", id:"exampleInputPassword1"  %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+</div></div>
+<div class="container">
+  <div class="actions">
+    <%= f.submit "تسجيل الدخول", class:"btn btn-outline-secondary" %>
+  </div>
+  </div>
+<% end %>
+<div class="container">
+<%= render "devise/shared/links" %>
+</div>
+<br><br>

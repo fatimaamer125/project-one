@@ -1,0 +1,67 @@
+<nav class="navbar navbar-default bootsnav navbar-fixed">
+<div class="navbar-top bg-grey fix">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="navbar-callus text-left sm-text-center">
+</div>
+</div>
+<div class="col-md-6">
+<div class="navbar-socail text-right sm-text-center">
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Start Top Search -->
+<div class="top-search">
+<div class="container">
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-search"></i></span>
+<input type="text" class="form-control" placeholder="أبحث">
+<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+</div></div></div>
+<!-- End Top Search -->
+<div class="container"> 
+<div class="attr-nav">
+<ul>
+<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+</ul>
+</div> 
+<!-- Start Header Navigation -->
+<div class="navbar-header">
+  <a class="navbar-brand" href="#">
+<img src="../assets/06.png" id="logo">
+</a>
+  <ul class="nav navbar-nav navbar-left">
+<% if user_signed_in? %>
+   Logged in as <strong><%= current_user.email %></strong>.
+   <%= link_to 'تعديل', edit_user_registration_path %> |
+   <%= link_to "خروج", destroy_user_session_path, method: :delete  %>
+ <% else %>
+ <li>
+   <%= link_to "تسجيل جديد", new_user_registration_path  %> </li>
+   <li>
+   <%= link_to "دخول", new_user_session_path %>
+</li>
+ <% end %>
+
+</div>
+<!-- End Header Navigation -->
+<!-- navbar menu -->
+<div class="collapse navbar-collapse" id="navbar-menu">
+<ul class="nav navbar-nav navbar-right">
+<li>
+<%= link_to "حول المنصة", names_path %>
+</li>
+<li>
+<%= link_to "حول التطبيق", views_path %>
+</li>
+<li>
+<%= link_to "تبليغ عن الحالات الانسانية" ,new_post_path %>
+</li>
+<li>
+	<%= link_to "الرئيسية", root_path %> 
+</li></ul>
+</div></div> 
+</nav>
